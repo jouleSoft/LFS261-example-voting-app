@@ -7,6 +7,10 @@ pipeline {
 
   stages {
     stage('Build') {
+      when {
+        changeset "**/result/**"
+      }
+
       steps {
         echo 'Building Result application'
 
@@ -18,6 +22,10 @@ pipeline {
     }
 
     stage('Test') {
+      when {
+        changeset "**/result/**"
+      }
+
       steps {
         echo 'Executing NodeJS tests'
 
