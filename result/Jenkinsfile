@@ -30,6 +30,7 @@ pipeline {
         echo 'Executing NodeJS tests'
 
         dir('result') {
+          sh 'npm install'
           sh 'npm test'
         }
       }
